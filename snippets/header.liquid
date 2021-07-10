@@ -7,12 +7,12 @@
   * menu_contact
 {%- endcomment -%}
 
-<header class="header" id="header" data-module="header">
+<header class="header" id="header" data-module-init="header">
   <div class="header__wrapper">
     <div class="header__container container container--xl">
 
       <div class="header__order">
-        <a class="header__order-link h4" href="{{ menu_order_link }}" title="{{ menu_order }}">{{ menu_order }}</a>
+        <a class="header__order-link h4 white uppercase" href="{{ menu_order_link }}" title="{{ menu_order }}">{{ menu_order }}</a>
       </div>
 
       <a class="header-logo" href="{{ routes.root_url }}" title="{{ shop.name }}">
@@ -21,7 +21,7 @@
       </a>
 
       <div class="header__contact">
-        <a class="header__contact-link h4" href="{{ menu_contact_link }}" title="{{ menu_contact }}">{{ menu_contact }}</a>
+        <a class="header__contact-link h4 white uppercase" href="{{ menu_contact_link }}" title="{{ menu_contact }}">{{ menu_contact }}</a>
       </div>
 
       {% if linklist %}

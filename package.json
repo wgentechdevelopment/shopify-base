@@ -1,5 +1,5 @@
 {
-  "name": "clggroup",
+  "name": "shoptify-base",
   "version": "1.0.4",
   "scripts": {
     "build": "gulp build",
@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "flickity": "^2.1.1",
+    "stickyfill": "^1.1.1-strict",
     "lodash.throttle": "^4.1.1",
     "shave": "^2.0.4",
     "svg-pan-zoom": "github:ariutta/svg-pan-zoom",

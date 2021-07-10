@@ -17,7 +17,6 @@
   {%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}
   {%- assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic' -%}
 
-
   <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style">
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ base_font | font_url }}" type="font/woff2" crossorigin>
@@ -45,7 +44,7 @@
     {%- if current_page != 1 -%}
       &ndash; {{ 'general.meta.page' | t: page: current_page }}
     {%- endif -%}
-    {%- assign escaped_page_title = page_title | escape -%}
+  {%- assign escaped_page_title = page_title | escape -%}
     {%- unless escaped_page_title contains shop.name -%}
       &ndash; {{ shop.name }}
     {%- endunless -%}
@@ -143,25 +142,25 @@
     };
 
     {%- if template == 'collection' -%}
-      {%- if current_tags -%}
-        {%- capture tag_handles -%}
-            {%- for tag in current_tags -%}
-              {{- tag | handle | append: '|' -}}
-            {%- endfor -%}
-        {%- endcapture -%}
-      {%- endif -%}
-      theme.backToCollection = {
-        collection: {
-          title: {{ collection.title | json }},
-          link: "{{ shop.url }}{{ collection.url }}{%- if current_tags -%}/{{- tag_handles | split: '|' | join: '+' -}}{%- endif -%}"
-        }
-      };
-      sessionStorage.setItem("backToCollection", JSON.stringify(theme.backToCollection.collection));
+    {%- if current_tags -%}
+    {%- capture tag_handles -%}
+    {%- for tag in current_tags -%}
+    {{- tag | handle | append: '|' -}}
+    {%- endfor -%}
+    {%- endcapture -%}
+    {%- endif -%}
+    theme.backToCollection = {
+      collection: {
+        title: {{ collection.title | json }},
+        link: "{{ shop.url }}{{ collection.url }}{%- if current_tags -%}/{{- tag_handles | split: '|' | join: '+' -}}{%- endif -%}"
+      }
+    };
+    sessionStorage.setItem("backToCollection", JSON.stringify(theme.backToCollection.collection));
 
     {%- elsif template != 'product' -%}
-      if (sessionStorage.getItem("backToCollection")) {
-        sessionStorage.removeItem("backToCollection")
-      }
+    if (sessionStorage.getItem("backToCollection")) {
+      sessionStorage.removeItem("backToCollection")
+    }
     {%- endif -%}
 
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -185,8 +184,8 @@
     }
   </script>
 
+  {% include "fonts" %}
   <link rel="stylesheet" href="{{ 'main.min.css' | asset_url }}" />
-
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js' id='jquery-core-js'></script>
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js' id='jquery-migrate-js'></script>
   <script src="{{ 'main.min.js' | asset_url }}" defer="defer"></script>

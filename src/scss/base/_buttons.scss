@@ -1,276 +1,254 @@
-%button {
-  font-family: $f-poppins-semi;
-  font-size: 14px;
-  text-transform: initial;
-  text-align: center;
-  letter-spacing: .8px;
-}
-
-%button-arrow {
-  font-family: $f-poppins-semi;
-  font-size: 14px;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: .8px;
-
-  @media (min-width: break($m)) {
-    font-size: 18px;
-  }
-
-  @media (min-width: break($xl)) {
-    font-size: 21px;
-  }
-}
-
 .button {
   position: relative;
-  @extend %button;
-  @extend %transition-all;
-  display: inline-flex;
-  padding: 10px 25px;
-  border-radius: 20px;
-  color: $c-blue4;
-  border: none;
-  overflow: hidden;
-  z-index: 3;
+  display: inline-block;
+  text-align: center;
 
-  &:before {
-    @extend %transition-all;
-    @extend %absolute-full;
-    content: '';
-    background: $c-blue5;
-    z-index: -1;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: $c-blue4;
-    z-index: -1;
-    transition: all .3s ease-in-out;
-  }
-  &:hover {
-    &:after {
-      top: 0;
-    }
+  &:disabled {
+    opacity: 0.4;
   }
 }
 
-.button--primary {
-  @extend .button;
-  @extend %transition-all;
-  border: 1px solid $c-blue4;
-  background: $c-blue4;
+.button__el svg {
+  display: none;
+}
+
+.button--primary,
+.button--primary-book {
+  height: 40px;
+  min-width: 151px;
+  border-radius: 5px;
+  padding: 0 4ch;
+  line-height: 40px;
+  vertical-align: middle;
+  font-family: $font-primary;
+  font-size: 1.3rem; /* 13px */
+  font-weight: bold;
   color: $c-white;
+  transition: color $speed $ease;
 
-  &:before {
-    background: transparent;
+  @media (min-width: break($xs)) {
+    height: 49px;
+    line-height: 49px;
   }
-
-  &:after {
-    background: $c-white;
-  }
-
-  &:hover {
-    background: $c-white;
-    color: $c-blue5;
-  }
-}
-
-.button--outline-white {
-  @extend .button;
-  @extend %transition-all;
-  border: 1px solid $c-white;
-  background: transparent;
-  color: $c-white;
-  padding: 5px 12px;
-
-  @media (max-width: break($xs)) {
-    font-size: 12px;
-    font-family: $f-poppins-light;
-  }
-
-  @media (min-width: break($s)) {
-    padding: 10px 20px;
-  }
-
-  &:before {
-    background: transparent;
-  }
-
-  &:after {
-    background: $c-blue4;
-  }
-
-  &:hover {
-    background: $c-blue5;
-    color: $c-white;
-  }
-}
-
-.button-arrow--secondary {
-  display: block;
-
-  .button__icon {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  svg {
-    width: 45px;
-    height: 25px;
-    path {
-      fill: $c-blue4;
-    }
-  }
-
-  &:hover {
-    svg path {
-      fill: $c-blue5;
-    }
-  }
-}
-
-.button-arrow {
-  font-family: $f-poppins-semi;
-  font-size: 14px;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
 
   &::before {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 0;
-    height: 1px;
-    background-color: $c-blue4;
-    transition: width 0.3s ease;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: $c-black;
+    transition: background-color $speed $ease, transform $speed $ease;
   }
 
-  &:hover {
-    &::before {
-      width: 100%;
-    }
-  }
-
-  .button__icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 13px;
-    margin-left: 7px;
-
-    @media (min-width: break($m)) {
-      margin-left: 15px;
-    }
-  }
-
-  .button__icon svg {
-    width: 12px;
-    height: 12px;
-
-    @media (min-width: break($m)) {
-      width: 14px;
-      height: 14px;
-    }
-  }
-}
-
-.button-outline {
-  @extend .button;
-  @extend %transition-all;
-  border: 1px solid $c-blue4;
-  background: transparent;
-  color: $c-blue4;
-
-  &:before {
-    background: transparent;
-  }
-  &:after {
-    background: $c-blue4;
-  }
-  &:hover {
-    background: $c-blue5;
-    color: $c-white;
-  }
-}
-
-.button-outline-secondary {
-  @extend .button-outline;
-}
-
-.button-link {
-  position: relative;
-  overflow: hidden;
-  &:before,span {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: center;
-  }
-  &:before {
-    @extend %transition-all;
+  &::after {
     content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 5px;
+    border: solid 1px transparent;
+    transition: border $speed $ease;
+
+    @media (min-width: break($xs)) {
+      top: -4px;
+      left: -4px;
+      width: calc(100% + 6px);
+      height: calc(100% + 6px);
+    }
+  }
+
+  .non-touch &:hover:not([disabled]):not([href=""]) {
+    &::before {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.button--primary-book {
+  height: 55px;
+  line-height: 55px;
+  width: 100%;
+
+  .non-touch &:hover:not([disabled]):not([href=""]) {
+    color: $c-black;
+
+    &::before {
+      background-color: $c-orange;
+      transform: scale(1);
+    }
+  }
+}
+
+.button--secondary {
+  font-family: $font-primary;
+  font-size: 1.3rem; /* 13px */
+  font-weight: bold;
+
+  &::before {
+    content: '';
+    position: absolute;
     bottom: -2px;
-    height: 3px;
-    background-color: $c-blue4;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: solid 1px currentColor;
+    pointer-events: none;
   }
-  &:hover {
-    span {
-      animation: buttonSlideOut .4s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: -1;
+    width: calc(100% + 18px);
+    height: calc(100% + 18px);
+    border-radius: 5px;
+    border: solid 1px transparent;
+    transition: border $speed $ease;
+  }
+
+  .non-touch &:hover:not([disabled]):not([href=""]) {
+    &::before {
+      animation-name: text-link-hover;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
     }
-    &:before {
-      bottom: 0;
+  }
+}
+
+.button--full-width {
+  width: 100%;
+}
+
+.skip_link {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -100px);
+  text-transform: uppercase;
+  padding: 10px 30px;
+  color: $c-white;
+  background-color: $c-black;
+  border: 3px solid $c-black;
+  z-index: 998;
+
+  &:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  &:active,
+  &:focus {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%);
+    transition: all 0.3s ease;
+  }
+}
+
+.skip_link--sidebar {
+  top: 0;
+  left: 0;
+  transform: translate(-100%);
+
+  &:active,
+  &:focus {
+    transform: translate(0);
+  }
+}
+
+.button--header-search {
+  width: auto;
+  min-width: auto;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: break($m)) {
+    width: 109px;
+    min-width: 109px;
+    height: 46px;
+    line-height: 46px;
+    padding: 0 22px;
+    color: $c-black;
+    background: $c-orange;
+  }
+
+  &::before {
+    background: transparent;
+
+    @media (min-width: break($m)) {
+      border-radius: 0 5px 5px 0;
+      background: $c-orange;
+    }
+  }
+
+  .button__el {
+    @media (min-width: break($m)) {
+      display: inline-flex;
+    }
+  }
+
+  .button__text {
+    display: none;
+
+    @media (min-width: break($m)) {
+      display: block;
+    }
+  }
+
+  svg {
+    display: block;
+    width: 17px;
+    color: $c-black;
+
+    @media (min-width: break($m)) {
+      margin-right: 6px;
     }
   }
 }
 
-@keyframes buttonSlideOut {
-  0% {
-    transform: translateY(0)
-  }
-  50% {
-    transform: translateY(-150%);
-    opacity: 1
-  }
-  51% {
-    transform: translateY(-150%);
-    opacity: 0
-  }
-  52% {
-    transform: translateY(200%);
-    opacity: 0
-  }
-  53% {
-    transform: translateY(200%);
-    opacity: 1
-  }
-  100% {
-    transform: translateY(0);
+.button--book-form {
+  min-width: 100%;
+  min-height: 55px;
+  margin-bottom: 27px;
+
+  .non-touch &:hover:not([disabled]):not([href=""]) {
+    color: $c-black;
+
+    &::before {
+      transform: none;
+      background-color: $c-orange;
+    }
   }
 }
 
-@keyframes buttonSlideOut{
-  0%{ transform: translateY(0) }
-  100%{ transform: translateY(-200%); opacity: 1 }
+.button--book-form:focus:not([disabled]) {
+  color: $c-white;
+
+  .user-is-tabbing & {
+    &::before {
+      transform: none;
+      background-color: $c-orange;
+    }
+  }
 }
 
-@keyframes buttonBackgroundSlideUp{
-  from{ transform: translateY(0) }
-  to{ transform: translateY(calc(-100% - 4px)) }
-}
+.button--secondary:focus:not([disabled]),
+.button--primary-book:focus:not([disabled]),
+.button--primary:focus:not([disabled]) {
+  outline: none;
 
-button {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  .user-is-tabbing & {
+    &::after {
+      border: $c-border;
+    }
+  }
 }
