@@ -1,0 +1,40 @@
+%ul,
+.ul,
+%ol,
+.ol {
+  @extend .p1;
+  padding-left: 24px;
+
+  li {
+    position: relative;
+    margin-top: 3px;
+    line-height: 25px;
+
+    @media (min-width: break($xs)) {
+      margin-top: 5px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  ul,
+  ol {
+    margin-top: 3px;
+
+    @media (min-width: break($xs)) {
+      margin-top: 5px;
+    }
+  }
+}
+
+%ul,
+.ul {
+  list-style: disc;
+}
+
+%ol,
+.ol {
+  list-style: decimal;
+}
