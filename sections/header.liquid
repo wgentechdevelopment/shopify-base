@@ -1,0 +1,83 @@
+{% include 'search-drawer' %}
+{% include 'header',
+  linklist: section.settings.main_linklist,
+  menu_order_link: section.settings.menu_order_link,
+  menu_order: section.settings.menu_order,
+  menu_contact_link: section.settings.menu_contact_link,
+  menu_contact: section.settings.menu_contact
+%}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "radio",
+      "id": "align_logo",
+      "label": "Logo alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centered"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "label": "Custom logo width",
+      "min": 50,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": {
+        "en": "Other Menu"
+      }
+    },
+    {
+      "type": "text",
+      "id": "menu_order",
+      "label": "Order",
+      "default": "Order"
+    },
+    {
+      "type": "url",
+      "id": "menu_order_link",
+      "label": "Order Link"
+    },
+    {
+      "type": "text",
+      "id": "menu_contact",
+      "label": "Contact",
+      "default": "Contact"
+    },
+    {
+      "type": "url",
+      "id": "menu_contact_link",
+      "label": "Contact Link"
+    }
+  ]
+}
+{% endschema %}
+
+

@@ -1,0 +1,38 @@
+input[type="date"],
+select,
+button {
+  &:focus {
+    outline: 0;
+  }
+}
+
+button,
+input[type=submit] {
+	cursor: pointer;
+}
+
+ul {
+	margin: 0;
+}
+
+.list-reset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a:focus {
+  outline: 0;
+}
+
+input {
+  border-radius: 0;
+  appearance: none;
+  &:focus {
+    outline: 0;
+  }
+}
+
+figure {
+  margin: 0;
+}

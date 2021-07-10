@@ -1,0 +1,387 @@
+%heading-large {
+  font-family: $f-poppins-bold;
+  font-size: 30px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 48px;
+  }
+}
+
+.heading-large {
+  @extend %heading-large;
+}
+
+%heading-large--light {
+  font-family: $f-poppins-light;
+  font-size: 30px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 48px;
+  }
+}
+
+.heading-large--light {
+  @extend %heading-large--light;
+}
+
+%heading-medium {
+  font-family: $f-poppins-bold;
+  font-size: 22px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 28px;
+  }
+}
+
+.heading-medium {
+  @extend %heading-medium;
+}
+
+%heading-medium--light {
+  font-family: $f-poppins-light;
+  font-size: 22px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 28px;
+  }
+}
+
+.heading-medium--light {
+  @extend %heading-medium--light;
+}
+
+%heading-small {
+  font-family: $f-poppins-bold;
+  font-size: 12px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    font-size: 14px;
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 18px;
+  }
+}
+
+.heading-small {
+  @extend %heading-small;
+}
+
+%heading-small--light {
+  font-family: $f-poppins-light;
+  font-size: 14px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 21px;
+  }
+}
+
+.heading-small--light {
+  @extend %heading-small--light;
+}
+
+%p-small {
+  font-family: $f-poppins-medium;
+  font-size: 12px;
+
+  @media (min-width: break($m)) {
+    font-size: 14px;
+  }
+
+  @media (min-width: break($l)) {
+    font-size: 21px;
+  }
+}
+
+.p-small {
+  @extend %p-small;
+}
+
+%p-small--light {
+  font-family: $f-poppins-light;
+  font-size: 12px;
+
+  @media (min-width: break($m)) {
+    font-size: 14px;
+  }
+
+  @media (min-width: break($l)) {
+    font-size: 21px;
+  }
+}
+
+.p-small--light {
+  @extend %p-small--light;
+}
+
+%p-14 {
+  font-family: $f-poppins-light;
+  font-size: 14px;
+  color: $c-gray;
+}
+
+.p-14 {
+  @extend %p-14;
+}
+
+%p-24 {
+  font-family: $f-poppins-light;
+  font-size: 24px;
+  color: $c-gray;
+}
+
+.p-24 {
+  @extend %p-24;
+}
+
+%footer-heading {
+  font-family: $f-poppins-bold;
+  font-size: 14px;
+
+  @media (min-width: break($s)) {
+    font-size: 16px;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 18px;
+  }
+}
+
+%footer-p {
+  font-family: $f-poppins-medium;
+  font-size: 12px;
+
+  @media (min-width: break($s)) {
+    font-size: 14px;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 16px;
+  }
+}
+
+.footer-p {
+  @extend %footer-p;
+}
+
+%footer-label {
+  font-family: $f-poppins-semi;
+  font-size: 12px;
+
+  @media (min-width: break($s)) {
+    font-size: 14px;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 16px;
+  }
+}
+
+.footer-label {
+  @extend %footer-label;
+}
+
+%footer-a {
+  font-family: $f-poppins-light;
+  font-size: 12px;
+
+  @media (min-width: break($s)) {
+    font-size: 14px;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 16px;
+  }
+}
+
+.footer-a {
+  @extend %footer-a;
+}
+
+%bold {
+  font-weight: bold;
+}
+
+%menu-item {
+  font-family: $f-poppins-light;
+  font-size: 14px;
+
+  @media (min-width: break($s)) {
+    font-size: 18px;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 21px;
+  }
+}
+
+.menu-item {
+  @extend %menu-item;
+}
+
+%menu-heading {
+  font-family: $f-poppins-medium;
+  font-size: 14px;
+
+  @media (min-width: break($s)) {
+    font-size: 18px;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 21px;
+  }
+}
+
+.menu-heading {
+  @extend %menu-heading;
+}
+
+/** Audit Assuarance **/
+%heading--service-box {
+  font-family: $f-poppins-bold;
+  font-size: 30px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+}
+
+.heading--service-box {
+  @extend %heading--service-box;
+}
+
+/** Xero Doing beautifull **/
+%heading--xero-box {
+  font-family: $f-poppins-bold;
+  font-size: 24px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 32px;
+  }
+}
+
+.heading--xero-box {
+  @extend %heading--xero-box;
+}
+
+%p--xero-box {
+  font-family: $f-poppins-light;
+  font-size: 14px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 21px;
+  }
+}
+
+.p--xero-box {
+  @extend %p--xero-box;
+}
+
+%heading--xero-step {
+  font-family: $f-poppins-bold;
+  font-size: 18px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 28px;
+  }
+}
+
+.heading--xero-step {
+  @extend %heading--xero-step;
+}
+
+%heading--xero-save-time {
+  font-family: $f-poppins-bold;
+  font-size: 36px;
+  line-height: 1;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 48px;
+  }
+}
+
+.heading--xero-save-time {
+  @extend %heading--xero-save-time;
+}
+
+/** Service Xero **/
+.heading--service-xero-workstem {
+  font-family: $f-poppins-light;
+  font-size: 24px;
+  line-height: 1;
+  text-transform: uppercase;
+
+  @media (min-width: break($s)) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 30px;
+    line-height: 1.2;
+    text-transform: initial;
+  }
+}
+
+.heading--service-xero-workstem-box {
+  font-family: $f-poppins-light;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+
+  @media (min-width: 425px) {
+    font-size: 22px;
+  }
+
+  @media (min-width: break($m)) {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+}

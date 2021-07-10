@@ -1,0 +1,21 @@
+development:
+  theme_id: 124315205828
+  api_key: d1fe6672bea6be09a4f45fcd927447af
+  password: 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
+  store: trainning-dev.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+staging:
+  theme_id: 124315140292
+  api_key: d1fe6672bea6be09a4f45fcd927447af
+  password: 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
+  store: trainning-dev.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+production:
+  theme_id: 124314845380
+  api_key: d1fe6672bea6be09a4f45fcd927447af
+  password: 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
+  store: trainning-dev.myshopify.com
+  ignore_files:
+    - config/settings_data.json

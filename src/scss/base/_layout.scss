@@ -1,0 +1,53 @@
+.site-content {
+  margin-bottom: 0 !important;
+}
+.container {
+  max-width: 100%;
+
+  @media (min-width: break($xl)) {
+    max-width: 1440px !important;
+  }
+}
+
+.container--custom {
+  margin: 0 auto;
+  padding: 0 $edge-gutter;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: break($s)) {
+    padding: 0 $edge-gutter-s;
+  }
+
+  @media (min-width: break($m)) {
+    max-width: 1300px;
+    padding: 0 $edge-gutter-m;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  flex: 1 0 auto;
+}
+
+%section-bottom {
+  margin-bottom: 2.375em;
+  @media (min-width: break($s)) {
+    margin-bottom: 3.75em;
+  }
+  @media (min-width: break($l)) {
+    margin-bottom: 5em;
+  }
+}
+
+%section-top {
+	padding-top: 2.5em;
+	@media (min-width: break($s)) {
+		padding-top: 3.75em;
+	}
+	@media (min-width: break($l)) {
+		padding-top: 5em;
+	}
+}

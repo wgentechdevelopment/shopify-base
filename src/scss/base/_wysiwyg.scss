@@ -1,0 +1,138 @@
+.wysiwyg {
+  h1 {
+    @extend %heading-large;
+
+    text-align: center;
+  }
+
+  h2 {
+    @extend %heading-medium;
+  }
+
+  h3 {
+    @extend %heading-medium;
+  }
+
+  h4 {
+    @extend %heading-small;
+  }
+
+  h5 {
+    @extend %heading-small;
+  }
+
+  h6 {
+    @extend %heading-small;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 15px;
+
+    @media (min-width: break($s)) {
+      margin-bottom: 20px;
+    }
+  }
+
+  ul,
+  ol {
+    @extend %p-small;
+
+    padding: 0;
+
+    li {
+      padding-left: 10px;
+    }
+  }
+
+  ul {
+    list-style: disc;
+    margin: 6px 0 31px 28px;
+  }
+
+  ol {
+    list-style: decimal;
+    margin: 13px 0 37px 28px;
+  }
+
+  li > ul,
+  li > ol {
+    margin: 5px 0 30px 28px;
+  }
+
+  p {
+    @extend %p-14;
+    margin: 0;
+    padding-bottom: 6px;
+
+    @media (min-width: break($s)) {
+      padding-bottom: 12px;
+    }
+
+    > a {
+      color: $c-blue3;
+      text-decoration: none;
+      border-bottom: solid 1px;
+      border-bottom-color: $c-blue3;
+      color: var(--c-black);
+      line-height: 1;
+
+      &:hover {
+        color: $c-blue4;
+        border-bottom-color: $c-blue4;
+      }
+    }
+  }
+
+  strong {
+    @extend %p-small;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  blockquote {
+    padding-top: 30px;
+    padding-bottom: 25px;
+
+    @media (min-width: break($s)) {
+      padding-top: 40px;
+      padding-bottom: 30px;
+    }
+
+    & p {
+      @extend %p-small;
+    }
+  }
+
+  img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    margin: 10px 0 37px;
+    vertical-align: middle;
+  }
+
+  figure {
+    max-width: 100%;
+    margin: 20px auto 32px 50%;
+    transform: translate3d(-50%, 0, 0);
+
+    @media (min-width: break($s)) {
+      max-width: calc(16 / 9 * 100%);
+    }
+
+    .wp-caption-text {
+      @extend %p-small;
+
+      padding-top: 10px;
+      opacity: 0.6;
+      font-style: italic;
+    }
+  }
+}
