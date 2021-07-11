@@ -1,0 +1,125 @@
+.social-links {
+  /* critical:start */
+  display: flex;
+  white-space: nowrap;
+
+  /* critical:end */
+
+  .footer-mega & {
+    justify-content: center;
+  }
+
+  &.header__social-links {
+    /* critical:start */
+    display: none;
+
+    /* critical:end */
+
+    @media (--m) {
+      /* critical:start */
+      display: flex;
+
+      /* critical:end */
+    }
+  }
+}
+
+.social-links__icon {
+  /* critical:start */
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 0.5em;
+  color: var(--c-link);
+
+  /* critical:end */
+
+  transition: color var(--duration) var(--ease);
+
+  &:first-child {
+    /* critical:start */
+    margin-left: 0;
+
+    /* critical:end */
+  }
+
+  &:last-child {
+    /* critical:start */
+    margin-right: 0;
+
+    /* critical:end */
+  }
+
+  &:hover {
+    color: var(--c-link-hover);
+  }
+
+  a {
+    /* critical:start */
+    display: block;
+    line-height: 0;
+
+    /* critical:end */
+
+    .header__social-links & {
+      /* critical:start */
+      color: var(--c-nav-mobile-text);
+
+      /* critical:end */
+
+      @media (--header-breakpoint) {
+        /* critical:start */
+        color: var(--c-header-text);
+
+        /* critical:end */
+      }
+    }
+
+    .header--transparent & {
+      /* critical:start */
+      color: var(--c-header-transparent-text);
+
+      /* critical:end */
+
+      @media (--header-breakpoint) {
+        /* critical:start */
+        color: var(--c-header-transparent-text);
+
+        /* critical:end */
+      }
+    }
+
+    .is-active.header--transparent & {
+      /* critical:start */
+      color: var(--c-nav-mobile-text);
+
+      /* critical:end */
+    }
+
+    .header--scrolled & {
+      color: var(--c-nav-mobile-text);
+
+      @media (--header-breakpoint) {
+        color: var(--c-header-text);
+      }
+    }
+
+    .is-active & {
+      @media (--header-breakpoint) {
+        color: var(--c-header-text);
+      }
+    }
+  }
+}
+
+.social-links--hero-small .social-links__icon a {
+  /* critical:start */
+  color: var(--c-header-text);
+
+  /* critical:end */
+
+  &:hover {
+    color: var(--c-link-hover);
+  }
+}

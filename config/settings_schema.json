@@ -1204,6 +1204,11 @@
       },
       {
         "type": "text",
+        "id": "social_linkin_link",
+        "label": "Linkin"
+      },
+      {
+        "type": "text",
         "id": "social_pinterest_link",
         "label": {
           "cs": "Pinterest",

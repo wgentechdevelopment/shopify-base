@@ -1,0 +1,154 @@
+.site-footer {
+  padding: 0;
+}
+
+.site-footer__item--newsletter {
+  flex: 1 1 40%;
+
+  @media (min-width: break($m)) {
+    flex: 1 1 40%;
+    margin-left: 20px;
+    padding-left: 40px;
+  }
+
+  @media (min-width: break($l)) {
+    flex: 1 1 50%;
+    margin-left: 30px;
+    padding-left: 50px;
+  }
+
+  @media (min-width: break($xl)) {
+    margin-left: 80px;
+    padding-left: 100px;
+  }
+
+  @media (min-width: break($xxl)) {
+    margin-left: 100px;
+    padding-left: 140px;
+  }
+}
+
+.site-footer__content {
+  padding: 45px 0 55px 0;
+  border-top: 1px solid $c-white;
+
+  @media (min-width: break($l)) {
+    padding: 65px 0;
+  }
+}
+
+.site-footer__item {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: $c-border;
+  
+  @media (min-width: 750px) {
+    border-bottom: none;
+  }
+
+  @media (min-width: break($s)) {
+    border: none;
+  }
+
+  @media (min-width: break($m)) {
+    padding-top: 25px;
+  }
+}
+
+.footer__link-title {
+  @media (min-width: break($m)) {
+    margin-bottom: 25px;
+  }
+}
+
+.footer__link-description {
+  margin-bottom: 10px;
+
+  @media (min-width: break($m)) {
+    margin-bottom: 50px;
+  }
+}
+
+.site-footer__linklist-item {
+  padding: 5px 0;
+
+  @media (min-width: break($m)) {
+    padding: 0 30px 20px 0;
+  }
+}
+
+.site-footer__item-inner--newsletter .newsletter__input {
+  @extend .p4;
+
+  padding: 10px;
+  background: $c-white;
+
+  @media (min-width: break($m)) {
+    padding: 10px 30px;
+  }
+}
+
+.site-footer__item-inner--newsletter .input-group {
+  @media (min-width: break($l)) {
+    flex-wrap: nowrap;
+  }
+}
+
+.site-footer__item-inner--newsletter .input-group__btn {
+  @media (min-width: break($l)) {
+    margin-left: 10px;
+  }
+}
+
+.site-footer__item-inner--newsletter .newsletter__submit {
+  @extend .p4;
+
+  border: 1px solid $c-white;
+  background: $c-black;
+  text-transform: none;
+}
+
+.site-footer__icon-list {
+  padding-top: 30px;
+
+  @media (min-width: break($m)) {
+    padding-top: 50px;
+  }
+}
+
+.site-footer__social-icons {
+  text-align: left;
+}
+
+.social-icons__item {
+  padding: 0 20px 0 0;
+}
+
+.site-footer__item:last-of-type {
+  padding-bottom: 0;
+  border: none;
+
+  @media (min-width: break($m)) {
+    border-left: $c-border;
+  }
+}
+
+.footer__credit-logo {
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  width: 240px;
+
+  @media (min-width: 750px) {
+    bottom: 90px;
+  }
+
+  @media (min-width: break($m)) {
+    bottom: 80px;
+    width: 313px;
+  }
+
+  @media (min-width: break($l)) {
+    bottom: 100px;
+  }
+}

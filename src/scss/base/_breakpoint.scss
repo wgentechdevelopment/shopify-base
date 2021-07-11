@@ -18,10 +18,10 @@
 
 @function break($breakpoint, $min-width: true, $min-height: true) {
   @if ($min-width==false) {
-    @return em($breakpoint);
+    @return em($breakpoint + 1);
   }
   @else {
-    @return em($breakpoint + 1);
+    @return em($breakpoint);
   }
   @if ($min-height==false) {
     @return em($breakpoint);

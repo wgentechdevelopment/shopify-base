@@ -82,8 +82,9 @@ body {
     font-size: 1.9rem; /* 19px */
     line-height: 1.32;
   }
-  @media (min-width: break($l)) {
-    font-size: 2.2rem; /* 22px */
+
+  @media (min-width: break($m)) {
+    font-size: 2.4rem; /* 24px */
     line-height: 1.14;
   }
 }
@@ -109,15 +110,13 @@ body {
 
 .p3 {
   font-family: $font-primary;
-  font-size: 1.1rem; /* 11px */
+  font-size: 1.2rem; /* 12px */
   line-height: 1.63;
   font-weight: normal;
-  letter-spacing: 0.17px;
 
   @media (min-width: break($m)) {
-    font-size: 1.4rem; /* 14px */
-    line-height: 1.28;
-    letter-spacing: 0.22px;
+    font-size: 1.8rem; /* 18px */
+    line-height: 1.23;
   }
 }
 
@@ -126,6 +125,11 @@ body {
   font-size: 1.3rem; /* 13px */
   line-height: 1.38;
   font-weight: normal;
+
+  @media (min-width: break($m)) {
+    font-size: 2rem; /* 20px */
+    line-height: 1.2;
+  }
 }
 
 .badge {
