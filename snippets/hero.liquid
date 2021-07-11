@@ -1,0 +1,36 @@
+{%- comment -%}
+  Parameters
+  * hero_type
+  * image
+  * video
+  * text_left
+  * text_right
+{%- endcomment -%}
+
+<div class="hero hero--bg-video hero--bg-image bg-black">
+  <div class="hero__container {% if hero_type == 'image' %}container container--xl{% endif %}">
+    <div class="hero__inner relative">
+      {% if video != blank and hero_type == 'video' %}
+        <div class="hero__video">
+          <video src="{{ video }}" loop muted autoplay></video>
+        </div>
+      {% endif %}
+
+      {% if image != blank and hero_type == 'image' %}
+        {%- assign image_src = image | img_url: '2160x' -%}
+        <div class="hero__image">
+          <figure class="hero__image-wrapper image--cover image--loaded ratio ro-2" role="img">
+            <img class="image__img" src="{{ image_src }}" alt="">
+          </figure>
+        </div>
+      {% endif %}
+
+      <div class="hero__scroll w1">
+        {%- include 'icon' with 'icon-scroll' -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hero__text-left">{{ text_left }}</div>
+<div class="hero__text-right">{{ text_right }}</div>

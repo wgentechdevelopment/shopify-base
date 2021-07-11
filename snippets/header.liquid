@@ -12,7 +12,7 @@
     <div class="header__container container container--xl">
 
       <div class="header__order">
-        <a class="header__order-link h4 white uppercase" href="{{ menu_order_link }}" title="{{ menu_order }}">{{ menu_order }}</a>
+        <a class="header__order-link button--bottom-line h4 white uppercase" href="{{ menu_order_link }}" title="{{ menu_order }}">{{ menu_order }}</a>
       </div>
 
       <a class="header-logo" href="{{ routes.root_url }}" title="{{ shop.name }}">
@@ -20,8 +20,12 @@
         <span class="hidden">{{ shop.name }}</span>
       </a>
 
-      <div class="header__contact">
-        <a class="header__contact-link h4 white uppercase" href="{{ menu_contact_link }}" title="{{ menu_contact }}">{{ menu_contact }}</a>
+      <div class="header__right f jcc aic">
+        {%- include 'language' -%}
+
+        <div class="header__contact">
+          <a class="header__contact-link button--bottom-line h4 white uppercase" href="{{ menu_contact_link }}" title="{{ menu_contact }}">{{ menu_contact }}</a>
+        </div>
       </div>
 
       {% if linklist %}
@@ -128,7 +132,7 @@
           </li>
           <li class="header-slide__item">
             <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
-              {%- include 'icon' with 'icon-cart' -%}
+              {%- include 'icon' with 'icon-bag' -%}
               <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
               <div id="CartCount" class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %} critical-hidden" data-cart-count-bubble>
                 <span data-cart-count>{{ cart.item_count }}</span>

@@ -1,0 +1,51 @@
+{%- assign locale_selector = false -%}
+{%- assign country_selector = false -%}
+{%- assign show_selectors = false -%}
+
+
+{%- assign show_country_selector = settings.show_currency_selector  -%}
+{%- if show_country_selector and localization.available_countries.size > 1 -%}
+  {%- assign country_selector = true -%}
+{%- endif -%}
+
+{%- if settings.show_locale_selector and localization.available_languages.size > 1 -%}
+  {%- assign locale_selector = true -%}
+{%- endif -%}
+
+{%- if country_selector or locale_selector -%}
+  {%- assign show_selectors = true -%}
+{%- endif -%}
+
+{%- if show_selectors -%}
+  <div class="language" id="language" data-module-init="language">
+    {%- form 'localization', class: 'language__form', data-disclosure-form: '' -%}
+      {%- if locale_selector -%}
+        <div class="language__form-item">
+          <h2 class="language__form-item-heading hidden">
+            {{ 'general.language.dropdown_label' | t }}
+          </h2>
+
+          <div class="language__form-inner relative">
+            <button type="button" class="language__label h4 white uppercase js-language-label">
+              {{ localization.language.endonym_name }}
+              {%- include 'icon' with 'icon-lang-down' -%}
+            </button>
+
+            <ul class="language__list js-language-list">
+              {%- for language in localization.available_languages -%}
+                {%- if language.endonym_name != localization.language.endonym_name -%}
+                  <li class="language__list-item {% if language.iso_code == localization.language.iso_code %}is-current{% endif %}">
+                    <a class="language__list-option h4 white uppercase" href="#" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
+                      {{ language.endonym_name }}
+                    </a>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+            <input class="language__input-value js-language-value" type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}" />
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+{%- endif -%}

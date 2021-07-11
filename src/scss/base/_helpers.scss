@@ -1,3 +1,61 @@
+.image {
+  position: relative;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.image--absolute {
+  position: absolute;
+}
+
+.image--cover,
+.image--contain {
+  .image__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.image--cover {
+  background-size: cover;
+
+  .image__img {
+    object-fit: cover;
+  }
+}
+
+.image--contain {
+  background-size: contain;
+
+  .image__img {
+    object-fit: contain;
+  }
+}
+
+.no-object-fit {
+  .image--contain, .image--cover {
+    .image__img {
+      display: none;
+    }
+  }
+}
+
+.image__img {
+  display: block;
+  max-width: 100%;
+  backface-visibility: hidden;
+  z-index: 1;
+  opacity: 0;
+
+  .image--loaded & {
+    opacity: 1;
+  }
+}
+
+/* Ratio */
 .ratio {
   position: relative;
 
