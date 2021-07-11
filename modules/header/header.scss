@@ -73,9 +73,8 @@
   justify-content: flex-end;
   min-height: 52px;
 
-  @media (min-width: break($m)) {
+  @media (min-width: break($s)) {
     justify-content: space-between;
-    min-height: 70px;
     border-bottom: none;
   }
 }
@@ -127,7 +126,7 @@
     height: 17px;
   }
 
-  @media (min-width: break($m)) {
+  @media (min-width: break($s)) {
     display: none;
   }
 }
@@ -178,6 +177,14 @@
 
 .header-logo {
   display: block;
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
 
   svg {
     width: 100px;
@@ -188,18 +195,16 @@
 .header__contact {
   display: none;
 
-  @media (min-width: break(--s)) {
+  @media (min-width: break($s)) {
     display: block;
-    width: 100px;
   }
 }
 
 .header__order {
   display: none;
 
-  @media (min-width: break(--s)) {
+  @media (min-width: break($s)) {
     display: block;
-    width: 100px;
   }
 }
 
@@ -229,9 +234,12 @@
     width: 384px;
   }
 
+  @media (min-width: break($s)) {
+    display: none;
+  }
+
   @media (min-width: break($m)) {
     position: static;
-    display: block;
     width: auto;
     height: 100%;
     flex: 0 0 auto;
@@ -370,17 +378,13 @@
   &.is-active {
     .header__nav-link {
       @media (max-width: break($m-max)) {
-        text-align: center;
         border-bottom: 1px solid $c-light-gray;
       }
     }
 
     .header__subnav {
-      margin-bottom: 20px;
-
       @media (min-width: break($m)) {
         height: auto;
-        margin-bottom: 0;
         overflow: auto;
         opacity: 1;
         visibility: visible;
@@ -389,8 +393,7 @@
 
     .header__nav-icon {
       position: absolute;
-      left: 0;
-      transform: rotate(90deg);
+      right: 0;
 
       @media (min-width: break($m)) {
         position: initial;
@@ -466,7 +469,7 @@
   width: 280px;
 
   @media (max-width: break($s-max)) {
-    transition: height 1s ease;
+    transition: height $speed $ease;
   }
 
   @media (min-width: break($xs)) {
@@ -621,6 +624,7 @@
 .header__subnav-list {
   column-count: 2;
   padding-top: 20px;
+  padding-bottom: 20px;
 
   @media (min-width: break($m)) {
     column-count: initial;
@@ -748,7 +752,7 @@
   width: 55px;
   z-index: 6;
 
-  @media (min-width: break($m)) {
+  @media (min-width: break($s)) {
     display: none;
     width: 70px;
   }
@@ -805,4 +809,16 @@
 
 .header-side__icon {
   display: flex;
+}
+
+.header-slide__item {
+  .site-header__icon {
+    padding: 0 10px;
+  }
+
+  .site-header__icon svg {
+    width: 18px;
+    height: 18px;
+    color: $c-white;
+  }
 }
